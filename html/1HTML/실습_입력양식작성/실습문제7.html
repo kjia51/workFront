@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문하기</title>
+
+</head>
+<body>
+    <form>
+        <h1>주문하기</h1>
+            고객명 : <input type="text" id='name' name='name' autofocus required><br><br>
+            전화번호 : <input type="text" id='tel' name='tel' required><br><br>
+            E-mail : <input type="text" id='email' name='email' required><br>
+        
+        <fieldset>
+            <legend>피자 사이즈</legend>
+
+            <input type="radio" name='size' id='Small' value='Small'>
+            <!--라벨을 붙여주어 라벨이 선택되어도 요소가 선택된것과 같은 효과를 줄 수 있다-->
+            <label for='Small'>Small</label><br><br>
+            <input type="radio" name='size' id='Medium' value='Medium'checked>
+            <label for='Medium'>Medium</label><br><br>
+            <input type="radio" name='size' id='Large' value='Large'>
+            <label for="Large">Large</label><br>
+            
+            
+        </fieldset>
+        <fieldset>
+            <legend>토핑 선택</legend>
+            <input type="checkbox" name='토핑' id='베이컨'>
+            <label for="베이컨">베이컨</label><br><br>
+            <input type="checkbox" name='토핑' id='치즈'>
+            <label for="치즈">치즈</label><br><br>
+            <input type="checkbox" name='토핑' id='양파'>
+            <label for="양파">양파</label><br><br>
+            <input type="checkbox" name='토핑' id='버섯'>
+            <label for="버섯">버섯</label><br>
+            </ul>
+            
+        </fieldset>
+        <br>
+        희망배송시간 : <input type="time">
+        <br><br>
+        배송시 요청사항 : <textarea cols='20' rows='3'></textarea>
+        <br><br>
+        <input type="submit" value="주문하기">
+
+    </form>
+</body>
+</html>

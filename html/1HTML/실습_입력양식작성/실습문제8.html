@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>납품관리</title>
+
+</head>
+<body>
+    <h1>납품관리</h1>
+    <fieldset>
+        <legend>납품자 정보</legend>
+        <ol type='1'>
+            <li>
+                <label for="name"> 납품자명 : <input type="text" id='name' name='name' placeholder='name' ></label>
+            </li>
+            <br>
+            <li>
+                <label for="email"> email : <input type="email" id='email' name='email' placeholder='answs@naver.com'></label>
+            </li>
+            <br>
+            <li>
+                <label for="url"> 홈페이지 : <input type="url" id='url' name='url' placeholder='http://' value='http://'></label></li>
+        </ol>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>납품정보</legend>
+        <ul>
+            <li>
+                <label for="상품명">상품명 : <input type="text" id='상품명' name='상품명'></label></li>
+            <br>
+            <li>
+                <label for="수량">납품수량 : <input type="number" id='수량' name='수량' min='0' max='100' placeholder='최소 100'></label>
+            </li>
+            <br>
+            <li>
+                <label for="point">납품등급 :<input type="range" name='point' id='point' min='60' max='100' step='5' value='70'></li>
+            <br>
+            <li>
+                <label for="기타">기타사항 : <textarea name="기타" id="기타" cols="20" rows="2"></textarea></label></li>
+        </ul>
+    </fieldset>
+    <br>
+    <input type="submit" value="send message">
+</body>
+</html>

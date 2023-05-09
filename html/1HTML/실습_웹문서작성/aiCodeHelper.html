@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <!--코드를 작성할 명령 문장을 작성 회원가입 화면 만들어줘 이메일 이름 생년월일
+    
+-->
+    <!-- Create a form for user registration -->
+<form>
+    <!-- Input field for username -->
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br><br>
+    <!-- Input field for password -->
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+</form>
+
+<script>
+    // Get form element
+    const form = document.querySelector('form');
+    // Add event listener for form submission
+    form.addEventListener('submit', (event) => {
+        // Prevent form submission
+        event.preventDefault();
+        // Get form values
+        const email = document.querySelector('#email').value;
+        const name = document.querySelector('#name').value;
+        const dob = document.querySelector('#dob').value;
+        // Regular expression for email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        // Check if email is valid
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+        // Check if name is empty
+        if (name.trim() === '') {
+            alert('Please enter your name.');
+            return;
+        }
+        // Check if dob is empty
+        if (dob === '') {
+            alert('Please enter your date of birth.');
+            return;
+        }
+        // Submit form if all validation passes
+        form.submit();
+    });
+</script>
+</body>
+</html>
