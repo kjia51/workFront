@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+    <Style>
+        p{
+            width : 500px;
+            height: 300px;
+            /* #000 검정 #111 ...#999 #aaa ... #fff*/
+            background-color: #eee;
+            border: 1px solid #ccc;
+        }
+       #static{
+        position: static;
+       } 
+       #relative-1{
+        position: relative;
+       }
+       #relative-2{
+        position: relative;
+        /**/
+        left: 100px;
+        top: -50px;
+       }
+       #fixed{
+        position: fixed;
+        width: 100px;
+        height: 100px;
+        background-color: #222;
+        /* 오른쪽에서 30 떨어지게 */
+        right: 30px;
+        /* 위에서 30 떨어지게 */
+        top: 30px;
+       }
+       #outer{
+        position: relative;
+       }
+       #first{
+        width: 300px;
+        height: 300px;
+        background-color: rgb(224, 89, 152);
+       }
+
+       #second{
+        width: 200px;
+        height: 200px;
+        background-color: seagreen;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+       }
+
+       #third{
+        width: 100px;
+        height: 100px;
+        background-color: beige;
+        position: absolute;
+        top: 100px;
+        left: 100px;
+       }
+    </Style>
+</head>
+<body>
+    CSS를 이용해서 여러 요소를 적절하게 배치시키는 것
+    <h2>포지셔닝</h2>
+    <div id='outer'>
+        <p id='first'></p>
+        <p id='second'></p>
+        <p id='third'></p>
+    </div>
+    <p id='static'>Eiusmod occaecat consectetur amet deserunt eiusmod velit. Ex et esse consequat laborum. Ipsum sit occaecat proident aliqua nulla exercitation aliquip nulla est in Lorem elit tempor. Ullamco id occaecat Lorem exercitation laboris consectetur officia ut laboris nostrud duis irure.
+
+    Sunt adipisicing et enim dolore commodo ullamco ad tempor amet consequat officia deserunt. Nisi cillum non anim sint dolore minim aliquip sunt proident. Sit deserunt proident ex ea deserunt cupidatat ex et. Velit velit nostrud dolore nulla culpa cupidatat labore eu ad id tempor reprehenderit Lorem. Amet esse nisi sit sunt in sint tempor aliquip minim labore commodo proident in. Sunt sunt exercitation minim exercitation anim fugiat laboris ad esse eu deserunt qui cupidatat id.</p>
+    <p>Fugiat laborum culpa sit anim.</p>
+    
+    <p>Consequat esse dolore ad reprehenderit reprehenderit sit.</p>
+
+    <p>Anim velit do occaecat dolore deserunt elit velit pariatur.</p>
+
+    <p id='relative-2'>Minim minim culpa est eiusmod enim irure sint sit. Voluptate eu veniam Lorem aliqua proident id nulla ex aliqua duis. Aliqua Lorem id duis enim ut veniam dolore pariatur occaecat esse dolor proident. Velit et cillum pariatur officia. Ea commodo sit nisi deserunt qui pariatur est deserunt deserunt elit commodo nulla. Voluptate commodo occaecat ex nostrud id ipsum do amet adipisicing mollit occaecat sit. Ex eiusmod nisi anim laborum proident et sit.
+
+    Fugiat aute ipsum fugiat nulla nisi ut mollit pariatur id non tempor tempor cupidatat nostrud. Anim eiusmod excepteur cillum pariatur officia est nisi fugiat eu enim veniam aliquip. Dolore velit sit amet pariatur pariatur.</p>  
+    <p id='fixed'>
+
+    </p>
+</body>
+</html>

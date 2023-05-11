@@ -144,3 +144,31 @@
         #tt4{
             text-transform: lowercase;
         }
+
+        .lh1{
+            font-size: 1em;
+            /*줄 간격*/
+            line-height: 1em;
+            /*가로 정렬*/
+            text-align: left;
+        }
+        .lh2{
+            font-size: 1em;
+            line-height: 2em;
+        }
+        .lh3{
+            font-size: 1em;
+            line-height: 3em;
+        }
+        .lh4{
+            font-size: 1em;
+            line-height: 4em;
+        }
+        table{
+            /* 캡션의 위치(기본 : top)*/
+            caption-side:  bottom;
+            border: 1px solid #999;
+        }
+        th, tr,td{
+            border: 1px dotted #999
+        }

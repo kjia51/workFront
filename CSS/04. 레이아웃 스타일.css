@@ -1,0 +1,138 @@
+#box1{
+    border: 2px solid red;
+    width: 200px;
+    /*세로 가운데 정렬 height, line-height를 같은 값을 설정*/
+    height: 200px;
+    line-height: 200px;
+}
+#box2{
+    border: 2px solid red;
+    width: 50%;
+    height: 200px;
+}
+.display{
+    border: 2px solid black;
+    width: 150px;
+    height: 50px;
+}
+
+.display-inline{
+    display: inline;
+}
+
+.display-inline-block{
+    display: inline-block;
+}
+
+.area1{
+    background-color: rgb(19, 151, 14);
+}
+
+.area2{
+    background-color: rgb(121, 175, 21);
+}
+.border{
+    width: 100px;
+    height: 100px;
+}
+.b1{
+    border-style: none;
+}
+.b2{
+    border-style: hidden;
+}
+.b3{
+    border-style: dotted;
+    border-color: green;
+    border-top-color: rgb(211, 71, 148);
+    border-left-color: antiquewhite;
+    border-bottom-color: blueviolet;
+    border-right-color: lawngreen;
+
+    border-width: thick, thin;
+    /*상 우 하 좌*/
+    border-width: 10px 5px 2px 1px;
+    border-width: 30px 20px;
+}
+.b4{
+    /*선 스타일 지정*/
+    border-style: dashed;
+    /*선의 색상 지정*/
+    border-color: darkblue;
+    /*꼭지점 둥글게 처리*/
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 30px;
+}
+.b5{
+    border-style: double;
+    border-width: 20px;
+    border-radius: 20px;
+    /*원 만들어주고 싶을 때*/
+    border-radius: 50%;
+}
+.b6{
+    border-style: groove;
+    border-width : 10px;
+
+}
+.b7{
+    border-style: inset;
+}
+.b8{
+    border-style: outset;
+}
+.b9{
+    border-style: ridge;
+}
+.b10{
+    border-style: solid;
+}
+
+.space{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(144, 197, 153);
+    border: 1px dotted rgb(65, 22, 165);
+}
+.margin{
+    margin: 50px;
+    margin-left: 300px;   
+        /*
+    그림자
+    수평거리 수직거리 흐림정도 번짐정도 색상 inset
+    흐림정도/번짐정도 : 0~양수값
+
+    */
+    box-shadow: -5px -5px 10px 10px rgb(81, 21, 194) inset;
+}
+
+/*
+    마진 중첩현상
+    요소를 세로로 배치할 경우 마진이 큰쪽으로 겹쳐짐
+*/
+.margin2{
+    margin:50px 100px;
+        /*
+    그림자
+    수평거리 수직거리 흐림정도 번짐정도 색상 inset
+    */
+    box-shadow: -5px -5px gray inset; 
+}
+
+.padding1{
+  /*상하좌우 모두 30px 적용*/
+    padding: 30px;
+}
+.padding2{
+    padding-top: 80px;
+    padding-right: 50px;
+    padding-left: 5px;
+}
+.padding3{
+    padding: 10px 50px;
+    box-shadow: -5px -5px 10px 10px rgb(81, 21, 194) inset;
+    /*margin속성을 이용해 가운데 정렬 요소의 너비가 지정되어 있어야함 왼쪽 마진과 오른쪽 마진 속성값을 auto로 지정*/
+    margin: auto 0px;
+}
