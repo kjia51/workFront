@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .wrap{
+            margin: 0px auto;
+        }
+        header{
+            width: 800px;
+            height: 150px;
+            background-color:beige;
+        }   
+        main{
+            width: 800px;
+            height: 500px;
+            background-color: rgb(184, 196, 141);
+        }
+        footer{
+            width: 800px;
+            height: 150px;
+            background-color: rgb(241, 208, 213);
+        }
+        header .logo{
+            width: 150px;
+            height: 150px;
+            background-color: rgb(224, 157, 180);
+            float: left;
+        }
+        header nav{
+            width: 650px;
+            height: 150px;
+            background-color: rgb(196, 179, 243);
+            float: left;
+        }
+        main aside{
+            width: 40%;
+            height: 100%;
+            background-color: rgb(163, 215, 228);
+            float: left;
+        }
+        main .mainContent{
+            width: 60%;
+            height: 100%;
+            background-color: rgb(143, 170, 229);
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>시멘틱 웹</h1>
+    <div class='wrap'>
+        <header>
+            <div class='logo'>로고영역</div>
+            <nav>메뉴영역</nav>
+        </header>
+        <main>
+            <aside>사이드바 영역</aside>
+            <!-- <div><section></section><section></section></div> -->
+            <div class='mainContent'>메인 컨텐츠 영역</div>
+        </main>
+        <footer>푸터영역</footer>
+    </div>
+</body>
+</html>
