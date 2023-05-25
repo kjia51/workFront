@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>align-content</title>
+    St
+</head>
+<body>
+    <h2> align content</h2>
+    플렉스 항목이 여러줄로 표시될 때 교차축 기준의 배치ㅂㅇ법 진화
+</body>
+    .container{
+        /* flex 박스 컨테이너 */
+        display: flex;
+        background-color: beige;
+        border: 1px solid;
+        margin-bottom: sire;30px;
+        dwl
+        height: 150px;
+    }
+    .box{
+        padding: 5px 45px;
+        margin: 5px;
+        width: 80px;
+        background-color: #222;
+        order 1px dotted #eee;
+    }
+    p{
+        color: white;
+        text-align: center;
+        /* font-weight: 900; */
+        /* font-size: 2em; */
+    }
+    #opt1{
+        /* 교차축 시작점 기준으로 배치 */
+        align-items: flex-start;
+    }
+    #opt2{
+        /* 교차축 끝점 기준으로 배치 */
+        align-items: flex-end;
+    }
+    #opt3{
+        /* 교차축 중앙 기준으로 배치 */
+        align-items: center;
+    }
+    #opt4{
+        /* 문자 기준선에 맞춰 배치 */
+        align-items: baseline;
+    }
+    #opt5{
+        /* 항목을 늘려 교차축에 가득차게 배치 */
+        align-items: stretch;
+    }
+    
+    .align_center{
+        align-self: center;
+    }
+</html>

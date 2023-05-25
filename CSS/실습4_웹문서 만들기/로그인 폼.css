@@ -1,0 +1,52 @@
+*{
+    margin: 0px;
+    box-sizing: border-box;
+}
+/* #login_wrap{
+    width: 600px;
+    height: 400px;
+
+} */
+#login_form{
+    width: 250px;
+    height: 100px;
+    padding-left: 10px;
+    padding-top: 30px;
+
+    text-align: center;
+}
+#login_form_input{
+    /* px로 지정할 경우 부모와 상관없이 지정 */
+    /* %로 높이값을 지정할 경우 부모의 높이가 지정되어ㅣ 있지 않으면 높이가 지정 안됌 */
+    width: 180px;
+    height: 50px;
+    float: left;
+}
+#login_form_input[type='text']{
+    width: 180px;
+    height: 25px;
+}
+#login_form_input[type='password']{
+    width: 180px;
+    height: 25px;
+}
+#login_form_btn{
+    width: 50px;
+    height: 100px;
+    float: left;
+}
+#login input{
+    width: 120%;
+    height: 100%;         
+}
+#login_link{
+    width: 200px;
+    height: 50px;
+    font-size: 1em;
+}
+a{
+    text-decoration: none;
+    font-size: small;
+
+
+}

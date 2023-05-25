@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>classList 활용하기</title>
+  <link rel="stylesheet" href="/JavaScript/0. hellow/css/main.css">
+  <link rel="stylesheet" href="/JavaScript/0. hellow/css/style.css">
+
+</head>
+<body>
+  <button id='mode'>모드 변경</button>
+  <h1 id="title" class='clicked'>My Profile</h1>
+  <div id="profile">
+    <img src="/JavaScript/images/pf.png" alt="도레미">
+    <div id="desc">
+      <p class="user">이름 : 도레미</p>
+      <p class="user">주소 : somewhere</p>
+      <p class="user">연락처 : 1234-5678</p>
+    </div>
+  </div>
+  <script>
+    // title.classList.toggle('clicked');
+    title.onclick = ()=>{
+      // 1. 클릭 시 class 값 clicked를 추가
+      // title.classList.add('clicked');
+      
+      // 2. class 속성에 포함되어있는지 확인 후 없으면 추가 있으면 삭제
+      // if(title.classList.contains('clicked')){
+      //   title.classList.remove('clicked');
+      // } else{
+      //   title.classList.add('clicked');
+      // }
+
+      // 3. toggle
+      title.classList.toggle('clicked');
+      console.log(userNum);
+
+    }
+      
+      // 실습
+      //자식요소 개개인별로 색 바꾸고 싶을때
+
+      // const userName = document.querySelector('#desc').firstElementChild;
+      // const userName = document.getElementsByClassName('user')[0];
+      const userName = document.getElementById('desc').element
+      const userAddress = document.querySelector('.user').nextElementSibling;
+      const userNum = document.querySelector('#desc').lastElementChild;
+
+      //부모요소 지정 -> 한번에 색 바꿀 때
+      // const desc = document.querySelector('.user').parentElement;
+
+
+      userName.onclick = ()=>{
+        userName.classList.toggle('blue-italic');
+      };
+
+      userAddress.onclick =()=>{
+        userAddress.classList.toggle('blue-italic');
+      }
+
+      userNum.onclick =()=>{
+        userNum.classList.toggle('blue-italic');
+      }
+
+      // desc.onclick =()=>{
+      //   desc.classList.toggle('blue-italic');
+      // }
+
+      
+      mode.onclick =()=>{
+        console.log(desc);
+        document.body.classList.toggle('dark');
+    };
+
+    
+
+    // p.onclick = ()=>{
+    //   user.toggle('blue-italic');
+    // }
+    // body.onclick = ()=>{
+    //   body.classList.toggle('dark');
+    // }
+  </script>
+</body>
+</html>

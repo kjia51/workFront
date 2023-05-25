@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Green</title>
+    <link rel="stylesheet" href="로그인 폼.css">
+    <style>
+        *{
+            margin: 0px auto;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+            color: black;
+        }
+        #wrap{
+            width: 1000px;
+            height: 900px;
+            margin: 0px auto;
+        }
+        .wrap header{
+            width: 1000px;
+            height: 150px;
+        }
+        #small-image{
+            width: 20%;
+            height: 85%;
+            background: url(/CSS/images2/logo.jpg) no-repeat center center;
+            float: left;
+
+        }
+        #large-image{
+            width: 60%;
+            height: 100%;
+            background: url(/CSS/images2/mainlogo.jpg) no-repeat center center;
+            float: left;
+        }
+        nav{
+            width: 100%;
+            height: 25%;
+
+
+        }
+        header nav ul{
+            padding: 0px;
+        }
+        header nav ul li{
+            height: 30px;
+            width: 25%;
+            float: left;
+            background-color: rgb(41, 129, 41);
+            text-align: center;
+        }
+        header nav ul li a{
+            display: inline-block;
+            width: 100%;
+            color: white;
+            font-weight: 900;
+            font-size: x-large;
+        }
+        header nav ul li a:hover{
+            background-color: darkgreen;
+        }
+        .main{
+            width: 1000px;
+            height: 700px;
+        }
+        #left{
+            width: 15%;
+            height: 90%;
+            background: url(/CSS/images2/left_img.jpg) no-repeat center center;
+            float: left;
+            margin-top: 20px;
+        }
+        main{
+            padding-left: 10px;
+            width: 60%;
+            height: 100%;
+
+            float: left;
+        }
+        main #img1{
+            width: 45%;
+            height: 45%;
+            background: url(/CSS/images2/main_img1.jpg) no-repeat center center;
+            margin-left: 15px;
+            float: left;
+        }
+        main #img2{
+            width: 45%;
+            height: 45%;
+            background: url(/CSS/images2/main_img2.jpg) no-repeat center center;
+            margin-left: 15px;
+            float: left;
+        }
+        main #img3{
+            width: 45%;
+            height: 45%;
+            background: url(/CSS/images2/main_img3.jpg) no-repeat center center;
+            margin-left: 15px;
+            float: left;
+        }
+        main #img4{
+            width: 45%;
+            height: 45%;
+            background: url(/CSS/images2/main_img4.jpg) no-repeat center center;
+            margin-left: 15px;
+            float: left;
+        }
+        #right{
+            width: 25%;
+            height: 90%;
+            float: right;
+        }
+
+        #right #login{
+            width: 100%;
+            height: 30%;
+            float: left;
+            
+        }
+        #right #middle{
+            width: 100%;
+            height: 40%;
+            margin-left: 10px;
+            background: url(/CSS/images2/right_img.jpg) no-repeat;
+            background-size: contain;
+            float: left;
+        }
+        #right #chat{
+            width: 100%;
+            height: 20%;
+            background: url(/CSS/images2/me_chat.jpg) no-repeat center center;
+            background-size: contain;
+            float: left;
+        }
+        footer{
+            width: 1000px;
+            height: 50px;
+            background:url(/CSS/images2/footer.jpg) no-repeat;
+        }
+        main ul{
+            padding: 0px;
+            width: 600px;
+            height: 600px;
+            padding-top: 20px;
+
+        }
+        main ul li{
+            width: 50%;
+            height: 50%;
+            padding-top: 10px;
+            float: left;
+            text-align: center;
+        }
+        main ul li img{
+            width: 96%;
+        }
+        main #table_img{
+            width: 100%;
+            height: 50%;
+        }
+        
+    </style>
+</head>
+<body> 
+    <div class="wrap">
+        <header>
+                <div id='small-image'></div>
+                <div id='large-image'></div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Board</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div class="main">
+            <aside id='left'>
+
+            </aside>
+            <main>
+
+                <ul>
+                    <li><img src="images/main_img1.jpg" alt="이미지1">나무를 심는 사람들</li>
+                    <li><img src="images/main_img2.jpg" alt="이미지2">아이들에게 녹색 미래를</li>
+                    <li><img src="images/main_img3.jpg" alt="이미지3">설악산을 살리는 길</li>
+                    <li><img src="images/main_img4.jpg" alt="이미지4">사라지는 북극곰들</li>
+                </ul>
+                
+                    <!-- <div id='img1'>나무를 심는 사람들</div>
+                    <div id='img2'>아이들에게 녹색 미래를</div>
+                    <div id='img3'>설악산을 살리는 길</div>
+                    <div id='img4'>사라지는 북극곰들</div> -->
+            </main>
+            <aside id='right'>
+                <div id='login'>
+                    <form id='login_form' action="" method=''>
+                        <div id='login_form_input'>
+                            <input type="text" name='' id='' placeholder='ID를 입력하세요'>
+                            <input type="password" name='' id='' placeholder='PW를 입력하세요'>
+                        </div>
+                        <div id='login_form_btn'>
+                        <input type="submit" value="로그인">
+                        </div>
+                        <div id='login_link'>
+                            <a href="#">회원가입</a>
+                            <a href="#">ID/PW 찾기</a>
+                        </div>
+                    </form>
+                </div>
+                <div id='middle'></div>
+                <div id='chat'></div>
+            </aside>
+        </div>        
+        <footer>
+            
+        </footer>
+    </div>
+</body>
+</html>

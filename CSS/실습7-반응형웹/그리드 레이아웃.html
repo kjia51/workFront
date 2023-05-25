@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그리드레이아웃</title>
+    <style>
+        *{
+
+        }
+        .wrapper{
+            border: 1px solid gray;
+            padding: 20px;
+            /* 그리드 컨테이너 지정 */
+            display: grid;
+            /* 컬럼의 갯수와 크기 지정
+            px 고정단위 이므로 컨텐츠가 길어질 경우 짤림 현상이 있을 수 있음 */
+            grid-template-columns: 200px 200px 200px;
+            /* repeat 갯수 , 크기
+            너비가 200px 3개 */
+            grid-template-columns: repeat(3, 100px);
+            /* fr(fraction 단위) : 그래드 컨테이너의 여유공간을 비율로 나눠 설정 */
+            grid-template-columns: repeat(3, 1fr);
+
+           /* 행의 갯수와 크기지정 */
+           /* 최소값 최대값 지정 */
+            /* grid-template-rows: 100px; */
+            grid-template-rows: repeat(2,minmax(50px, 60px));
+            /* gap: 10px; */
+
+            row-gap: 20px;
+            column-gap: 20px;
+        }
+        .items{
+           padding: 10px;
+           background-color: #eee;
+        }
+        /* odd 홀수 even 짝수 */
+        .items:nth-child(odd){
+            background-color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <!-- div.wrapper>(div.items)*5 -->
+    <div class="wrapper">
+        <div class="items">1Sint sunt velit veniam officia aliquip consectetur ex est dolor quis sunt amet.</div>
+        <div class="items">Amet ea incididunt Lorem exercitation laborum magna.</div>
+        <div class="items">Eu sit voluptate aliqua ullamco duis sit.</div>
+        <div class="items">Sint incididunt ullamco incididunt sunt commodo qui proident reprehenderit velit laboris.</div>
+        <div class="items">Sunt ad aliqua nostrud eiusmod cillum sit exercitation.</div>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>tab menu</title>
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            #tabMenu input[type=radio]{
+                display: none;
+            }
+            #tabMenu label{
+                font-size: 1.4em;
+                /* border: 1px solid black; */
+                /* display: inline-block; */
+                padding: 5px;
+                margin: 0px;
+                font-weight: 600;
+                color: gray;
+                height: 60px;
+                /* position: absolute; */
+
+            }
+            #tabMenu label:hover{
+                color: rgb(17, 17, 17);              
+            }
+            
+            #tabMenu input:checked +label{
+                background-color:#eee;
+                border: 1px solid #ccc;
+                color: rgb(207, 67, 161);
+            }
+
+            #tab_btn_notice:checked ~ #notice{
+                display: block;
+            }
+
+            #tab_btn_gallery:checked ~ #gallery{
+                display: block;
+            }
+
+            .tabContent{
+                display: none;
+            }
+            .tabContent{
+                border-top: 1px solid gray;
+                margin-top: 5px;
+                padding-left: 10px;
+                line-height: 3;
+            }
+            #content{
+                width: 500px;
+            }
+            #tabMenu{
+                width: 100%;
+                /* position: relative; */
+            }
+            #gallery ul li {
+                display: inline;
+            }
+            #gallery ul li img{
+                width: 200px;
+            }
+        </style>
+</head>
+<body>
+    <div id='content'>
+        <div id='tabMenu'>
+            
+            <!-- 라벨이 선택되도 연결된 요소가 체크되는 효과 -->
+            <input type="radio" name='tabs' id='tab_btn_notice' checked>
+            <label for="tab_btn_notice">공지사항</label>
+            <input type="radio" name='tabs' id='tab_btn_gallery' >
+            <label for="tab_btn_gallery">갤러리</label>
+            <article id='notice' class='tabContent' >
+                <!-- <h2>공지사항</h2> -->
+                    <ul>
+                        <li>게시글1</li>
+                        <li>게시글2</li>
+                        <li>게시글3</li>
+                        <li>게시글4</li>
+                        <li>게시글5</li>
+                    </ul>
+            </article>
+            <article id='gallery' class='tabContent'>
+                <!-- <h2>갤러리</h2> -->
+                    <ul>
+                        <li><img src="images/cup-1.jpg" alt=""></li>
+                        <li><img src="images/cup-2.jpg" alt=""></li>
+                        <li><img src="images/cup-3.jpgg" alt=""></li>
+                        <li><img src="images/cup-4.jpg" alt=""></li>
+                        <li><img src="images/cup-5.jpg" alt=""></li>
+                    </ul>
+            </article>
+        </div>
+    </div>
+</body>
+</html>

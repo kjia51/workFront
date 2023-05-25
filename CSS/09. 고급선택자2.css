@@ -1,0 +1,83 @@
+/* ,를 이용하여 선택자를 나열하면 같은 스타일 지정 */
+#actionTest, #hoverTest{
+    width: 100px;
+    height: 100px;
+    background-color: greenyellow;
+}
+
+/* 사용자가 요소를 클릭하면 색상을 변경 */
+#actionTest:active{
+    background-color: green;
+}
+#hoverTest:active{
+    background-color: green;
+}
+input[type=checkbox]:checked{
+    width: 20px;
+    height: 20px;
+}
+input[type=checkbox]+label{
+    font-size: 1.5em;
+}
+#userId:focus, #userPwd::focus{
+    background-color: #ccc;
+}
+/* 사용불가능상태 */
+option:enabled{
+    background-color: aqua;
+}
+option:disabled{
+    background-color: rgb(197, 159, 194);
+}
+button:disabled{
+    background-color: rgb(162, 211, 85);
+}
+
+/* 형제 관계 중 첫번째 요소 선택 */
+#test2 p:first-child{
+    background-color: blueviolet;
+    color: white;
+}
+/* 형제 관계 중 마지막 요소 선택 */
+/* 마지막 자식이 p태그가 아니므로 스타일이 지정되지 않는다 */
+#test2 p:last-child{
+    background-color: orange;
+    color: white;
+}
+#test2 p:nth-child(3n){
+    background-color: rgb(219, 81, 26);
+    color: white;
+}
+/* odd 홀수, even 짝수 */
+#test2 p:nth-child(odd){
+    background-color: rgb(19, 106, 163);
+    color: white;
+}
+/* 뒤에서 몇번째 선택 */
+#test2 p:nth-last-child(3){
+    background-color: aquamarine;
+}
+#test3 p:first-of-type{
+    background-color: rgb(245, 245, 4);
+}
+#test3 p:last-of-type{
+    background-color: rgb(146, 218, 23);
+}
+#test3 p:nth-of-type(2n){
+    background-color: rgb(40, 223, 223);
+}
+#test3 p:nth-of-type(4){
+    background-color: blueviolet;
+}
+
+/* 부정선택자 */
+#test4 p:not(:nth-child(even)){
+
+    background-color: rgb(127, 80, 255);
+}
+
+/* 부정선택자 */
+#test4 p:only-child{
+
+    background-color: rgb(204, 4, 177);
+}

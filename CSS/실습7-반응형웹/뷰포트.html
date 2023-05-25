@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- name : 설정 이름, content 설정값  -->
+    <!-- 기기의 width 값으로 설정하고 배율을 지정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .em2{
+            font-size: 2em;
+        }
+        .em3{
+            font-size: 0.5em;
+        }
+        .rem2{
+            font-size: 2rem;
+        }
+        html{
+            /* 기본 글자 크기 */
+            font-size: 10px;
+        }
+        .vw1{
+            font-size: 1vw;
+        }
+        .vw2{
+            font-size: 2;
+        }
+        .vh1{
+
+            };
+        .vh2{
+            ;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        상대단위 : 고정되지 않고 어떤 기준에 따라 유동적으로 바뀔 수 있는 길이(em, rem, %, vw, vh) <br>
+        절대단위 : 항상 고정된 길이를 나타내는 단위 (px, pt) <br>
+    </p>
+    <h2>단위</h2>
+    브라우저의 기본 글자크기(16px)
+    
+    <h2>em과 rem</h2>
+    font-size에 비례해서 결정되는 상대단위 <br>
+    em : 요소의 위치를 기준으로 1em
+    rem : 최상위요소(html)의 글자크기를 기준으로 1rem
+    <div>
+        div 1dept
+        <div class='em2'>
+            div 2dept
+            <div class='em2'>
+                div 3dept
+                <div class='em3'>
+                    div 4dept
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        div 1dept
+        <div class='rem2'>
+            div 2dept
+            <div class='rem2'>
+                div 3dept
+                <div class='rem2'>
+                    div 4dept
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2>viewport</h2>
+    현재 화면에 보여지는 영역
+    <p>
+    기기별 뷰포트가 다르므로 동일한 웹페이지라도 
+    기기에 따른 배율 조정이 발생하여 화면의 크기가 다르게 보이는 현상
+    </p>
+    
+    <h2>vw</h2>
+    화면의 너비의 1/100 : 1vw
+
+    <div class='vw1'>Qui magna nisi commodo ex sunt in adipisicing. Enim est aute ullamco consectetur in nisi adipisicing. Laborum consectetur fugiat aliquip nostrud dolor. Deserunt aliquip deserunt Lorem esse nostrud fugiat do ex cupidatat. Ad laborum Lorem dolor dolor nostrud duis exercitation nulla minim. Sit eu nulla ut minim do esse sint et anim eiusmod fugiat. Tempor commodo minim pariatur velit eu labore magna magna ut non enim velit anim consequat.
+
+    Ullamco ea consequat dolor aliqua aute cupidatat anim magna ad sit elit reprehenderit. In quis eu magna dolor velit. Dolore exercitation exercitation mollit reprehenderit. Occaecat deserunt proident sit fugiat laboris enim ipsum enim officia consectetur. Est sint eu labore ex ullamco id adipisicing exercitation minim.</div>
+    <div class='vw2'>vCillum excepteur tempor cillum duis dolore nostrud minim aute velit. Adipisicing proident elit nisi consequat consectetur veniam occaecat excepteur adipisicing. Velit officia mollit in consectetur commodo deserunt ipsum.
+
+    Consequat aute excepteur voluptate esse pariatur exercitation et consequat deserunt. Incididunt non nisi tempor proident deserunt ex culpa aute id id fugiat dolor amet. Irure exercitation amet sint aliquip est culpa incididunt.</div>
+
+    <h2>vh</h2>
+    화면 높이의 1/100 : 1vh
+
+    <h2>vmin</h2>
+    뷰포트 너비와 높이 중 작은 값의 1%
+
+    <h2>vmax</h2>
+    뷰포트 너비와 높이 중 작은 값의 1%
+
+</body>
+</html>

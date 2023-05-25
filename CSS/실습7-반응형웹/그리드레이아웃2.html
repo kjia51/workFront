@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid layout</title>
+    <style>
+        .items{
+           padding: 10px;
+           background-color: #eee;
+        }
+        /* odd 홀수 even 짝수 */
+        .items:nth-child(odd){
+            background-color: #bbb;
+        }
+        .wrapper1{
+            display: grid;
+            /* 최소 200 최대1fr
+            화면을 꽉 채울만큼 컬럼 너비를 늘려서 표시 */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+        .wrapper2{
+            display: grid;
+             /* 최소 200 최대1fr
+            컬럼 최소너비만큼 채워서 표시*/
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        }
+    </style>
+</head>
+<body>
+    <h2>auto-fill/auto-fit</h2>
+    컬럼의 너비와 함께 auto-fill 이나 auto-fit을 지정하면 화면 너비에 따라 자동으로 컬럼 갯수를 조절
+    auto-fit : 남는공간없이 꽉채우기
+    auto-fill : 최소너비까지 표시하고 남는 공간은 그대로 둠
+
+    <!-- auto-fit -->
+    <h3>auto-fit</h3>
+    <div class="wrapper1">
+        <div class="items">1Sint sunt velit veniam officia aliquip consectetur ex est dolor quis sunt amet.</div>
+        <div class="items">Amet ea incididunt Lorem exercitation laborum magna.</div>
+        <div class="items">Eu sit voluptate aliqua ullamco duis sit.</div>
+        <div class="items">Sint incididunt ullamco incididunt sunt commodo qui proident reprehenderit velit laboris.</div>
+        <div class="items">Sunt ad aliqua nostrud eiusmod cillum sit exercitation.</div>
+        
+    </div>
+
+    <!-- auto-fill -->
+    <h3>auto-fill</h3>
+    <div class="wrapper2">
+        <div class="items">1Sint sunt velit veniam officia aliquip consectetur ex est dolor quis sunt amet.</div>
+        <div class="items">Amet ea incididunt Lorem exercitation laborum magna.</div>
+        <div class="items">Eu sit voluptate aliqua ullamco duis sit.</div>
+        <div class="items">Sint incididunt ullamco incididunt sunt commodo qui proident reprehenderit velit laboris.</div>
+        <div class="items">Sunt ad aliqua nostrud eiusmod cillum sit exercitation.</div>
+        
+    </div>
+</body>
+</html>

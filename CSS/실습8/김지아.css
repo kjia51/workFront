@@ -1,0 +1,242 @@
+*{
+    margin: 0 auto;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+  }
+
+  h1{
+    color: white;
+    font-style : 'Gaegu', cursive;;
+    text-align: center;
+  }
+
+  #container{
+    width: 1200px;
+    height: 1000px;
+  }
+  header{
+    width: 1200px;
+    height: 100px;
+    background-color: rgb(62, 148, 228)
+  }
+
+  #slides img{
+    width: 1200px;
+  }
+  header div{
+    width: 20%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    line-height: 100px;
+  }
+  header nav{
+    width: 80%;
+    height: 100%;
+    float: left;
+  }
+  #topMenu li{
+    float: left;
+
+    width: 180px;
+    text-align: center;
+    line-height: 150px;
+
+  }
+  #topMenu li ul li{
+    list-style: none;
+    text-align: center;
+  }
+
+  #topMenu li a, #topMenu li ul li a{
+    color : white;
+    /* border: 1px solid black;
+    width: 100px; */
+  }
+
+
+  #topMenu li ul li{
+    display: none;
+
+  }
+  header:hover #topMenu li ul li{
+    display: block;
+    background-color: rgb(77, 142, 226);
+    width: 170px;
+    height: 100px;
+    position: relative;
+    z-index: 2;
+    border-top: 0;
+    margin-top: 0;
+    line-height: 100px;
+  }
+  #topMenu li{
+    border: 0;
+    margin: 0;
+  }
+
+  #slides {
+    width: 1200px;
+    height: 300px;
+    z-index: 1;
+    position: relative;
+  }
+
+  #tabMenu input[type=radio]{
+      display: none;
+  }
+
+  #tabMenu label{
+      width: 100px;
+      height: 60px;
+      font-size: 1.2em;
+      padding: 15px;
+      margin: 10px;
+      font-weight: 600;
+      color: rgba(128, 128, 128, 0.575);
+  }
+
+  #tabMenu input:checked +label{
+      background-color:#eee;
+      border: 1px solid #ccc;
+      color: rgb(180, 17, 17);
+  }
+
+  #notice, #gallery{
+    border-top: 1px solid rgba(128, 128, 128, 0.678);
+    margin-top: 15px;
+    margin-left: 10px;
+  }
+  .tabContent{
+      display: none;
+  }
+  #notice, #gallery{
+    padding: 15px;
+    line-height: 3;
+  }
+
+  #tab1:checked ~ #notice{
+      display: block;
+  }
+  /* #gallery{
+    width: 500px;
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(2,1fr);
+  } */
+
+  #contents{
+    width: 1200px;
+    height: 500px;
+    border-bottom: 3px solid gray;
+  }
+  #tabMenu{
+    width: 600px;
+    height: 500px;
+    padding-top: 50px;
+    float: left;
+  }
+  #links{
+    width: 600px;
+    height: 500px;
+    float: left;
+  }
+  #span{
+    width: 80px;
+    height: 80px;
+  }
+  #bottomMenu{
+    clear: both;
+  }
+  #bottomMenu ul li{
+    float: left;
+    padding: 10px;
+  }
+
+  #bottomMenu ul li a{
+    font-size: 1em;
+    color: gray;
+    margin-top: 10px;
+  }
+  #company{
+    clear: both;
+  }
+  #company p{
+    padding-left: 50px;
+    padding-top: 40px;
+    color: gray;
+  }
+  #bottomMenu ul li{
+    border-right: 1px solid gray;
+    margin-top: 10px;
+  }
+  #bottomMenu ul li:nth-last-child(1){
+    border: none;
+  }
+  #gallery{
+    padding-top: 50px;
+    width: 550px;
+    margin-left: 0;
+    padding-left: 0;
+    display: none;
+  }
+  #gallery img{
+    width: 150px;
+    height: 100px;
+    background-color: mintcream;
+  }
+
+  #tab2:checked ~ #gallery{
+    display: inline-block;
+  }
+  #tab2:checked ~ #gallery li{
+    padding-right: 10px;
+    float: left;
+  }
+
+  #links span{
+    width: 140px;
+    height: 140px;
+    border-radius: 100%;
+    margin-bottom: 15px;
+    margin-top: 130px;
+    border: 1px solid rgba(128, 128, 128, 0.178);
+
+  }
+  #links{
+    width: 600px;
+    height: 500px;
+  }
+  #links li{
+    float: left;
+    padding: 10px;
+  }
+  #links li a{
+    display: inline-block;
+    padding: 8px;
+    padding-top: 10px;
+    font-size: 1em;
+    font-weight: 500;
+    color: black;
+  }
+  #links li a p{
+    text-align: center;
+
+  }
+
+  #quick-icon1{
+    background: url(images/icon-1.jpg);
+    float: left;
+    margin-left: 5px;
+  }
+  #quick-icon2{
+    background: url(images/icon-2.jpg);
+    float: left;
+    margin-left: 5px;
+  }
+  #quick-icon3{
+    background: url(images/icon-3.jpg);
+    float: left;
+    margin-left: 5px;
+  }

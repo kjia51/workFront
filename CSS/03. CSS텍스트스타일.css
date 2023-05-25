@@ -166,7 +166,7 @@
         }
         table{
             /* 캡션의 위치(기본 : top)*/
-            caption-side:  bottom;
+
             border: 1px solid #999;
         }
         th, tr,td{

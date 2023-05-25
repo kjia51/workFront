@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>햄버거 메뉴</title>
+    
+    <script src="https://kit.fontawesome.com/5a87685c31.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+            color: black;
+        }
+        .burgerIcon{
+            width: 100px;
+            height: 100px;
+            /* background-color: cadetblue; */
+            /* margin: 20px; */
+            position: relative;
+            float: left;
+            /* border: 2px solid black; */
+        }
+        .burgerIcon p{
+            width: 100%;
+            height: 20%;
+            border-radius: 20px;
+            background-color: rgba(199, 69, 18, 0.918);
+            position: absolute;
+            transition: all 2s;
+        }
+
+
+        .burgerIcon p:nth-child(1){
+            top : 0px;
+        }
+        .burgerIcon:hover p:nth-child(1){
+            top:50%;
+            transform: translateY(-50%) rotate(45deg);
+        }
+        .burgerIcon p:nth-child(2){
+            /* 요소의 가운데를 시작점으로 해서 아래로 배치 */
+            top: 50%;
+            /* 요소 높이의 50%만큼 위로 올라감 */
+            /* %단위 : 요소가 가진 높이를 기준으로... */
+            transform: translateY(-50%);
+        }
+        .burgerIcon:hover p:nth-child(2){
+            /* 2번째 줄을 투명하게 */
+            opacity: 0;
+        }
+        .burgerIcon p:nth-child(3){
+            bottom : 0px;
+        }
+        .burgerIcon:hover p:nth-child(3){
+            bottom: 50%;
+            transform: translateY(50%) rotate(-45deg);
+        }
+        .menu{
+            width: 200px;
+            height: 600px;
+            left: -200px;
+            position: absolute;
+        }
+        .menu ul{
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.486);
+        }
+        .menu ul li{
+            width: 190px;
+            height: 50px;
+            background-color: rgb(66, 207, 207);
+        }
+        .menu>ul>li>a{
+            display: inline-block;
+            width: 190px;
+            height: 50px;
+            border-left: 10px solid darkblue;
+            padding-left: 20px;
+            /* text-align: center; */
+            font-size: 1.4em;
+            color: rgb(5, 78, 5);
+            font-weight: 900;
+        }
+        .alarm{
+            width: 200px;
+            height: 200px;
+            right: -200px;
+            position: absolute;
+            float: right;
+            
+        }
+        .alarm ul{
+            background-color: aquamarine;
+            
+        }
+        .alarm ul li a{
+            display: inline-block;
+            width: 190px;
+            height: 50px;
+            border-left: 10px solid darkblue;
+            padding-left: 20px;
+            /* text-align: center; */
+            font-size: 1.4em;
+            color: rgb(5, 78, 5);
+            font-weight: 900;
+        }
+        a:hover{
+            background-color: rgb(61, 105, 11);
+            color: white;
+        }
+        header{
+            width: 600px;
+            height: 100px;
+            background-color: rgba(241, 129, 16, 0.788);
+            
+        }
+        header:hover nav{
+            left: 0px;
+            top: 100px;
+            transition: all 2s;
+        }
+        /* .burgerIcon:hover nav{
+            left: 0px;
+            transition: all 2s;
+        } */
+        .inform{
+            background: url(images/inform.png) no-repeat;
+            background-size: contain;
+            width: 60px;
+            height: 60px;
+            float: right; 
+            margin: 20px;
+
+            /* border: 2px solid black; */
+        }
+        header:hover .inform{
+            background: url(images/inform_y.png) no-repeat;
+            /* <i class="fas fa-regular fa-bell"></i> */
+            background-size: contain;
+            width: 60px;
+            height: 60px;
+            float: right; 
+            margin: 20px;
+        }
+        i{
+            font-size: 4em;
+            float: right;
+            margin: 10px;
+        }
+        .fa-solid.fa-bell{
+            display: none;
+        }
+        header:hover .fa-solid{
+            display: block;
+        }
+        header:hover .fa-regular.fa-bell{
+            display: none;
+            position: relative;
+        }
+        .fa-solid.fa-bell{
+           
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+    <div class='burgerIcon'>
+        <p></p><p></p><p></p>
+    </div>
+    <!-- 타이틀 -->
+    <div class='title'></div>
+    <!-- 알림 -->
+    <!-- <div class='inform'> -->
+    <div>
+        <i class="fa-regular fa-bell"></i>
+        <i class="fa-solid fa-bell"></i>
+        <i class="fas fa-regular fa-burger"></i>
+        <!-- <img src="images/inform_y.png" alt="">
+        <img src="images/inform.png" alt=""> -->
+    </div>
+    <nav class='menu'>
+         <!-- ul>(li>a{메뉴$})*5  -->
+        <ul>
+            <li><a href="">메뉴1</a></li>
+            <li><a href="">메뉴2</a></li>
+            <li><a href="">메뉴3</a></li>
+            <li><a href="">메뉴4</a></li>
+            <li><a href="">메뉴5</a></li>
+        </ul>
+    </nav>
+
+    <nav class='alarm'>
+        <ul>
+            <li><a href="#">주문현황</a></li>
+            <li><a href="#">배달현황</a></li>
+        </ul>
+    </nav>
+    </header>
+</body>
+</html>
