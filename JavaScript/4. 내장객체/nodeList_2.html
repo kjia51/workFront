@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>web-programming</h1>
+      <ul id='items'>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Javascript</li>
+      </ul>
+      <script>
+        window.onload = function(){
+
+            let node1 = document.createElement('li');
+            let textnode1 = document.createTextNode('java');
+            node1.appendChild(textnode1);
+            let li1 = document.querySelector('li');
+            let items = document.getElementById('items');
+            items.insertBefore(node1,li1);
+            let node2 = document.createElement('li');
+            let textnode2 = document.createTextNode('oracle');
+            node2.appendChild(textnode2);
+            let li2 = document.querySelectorAll('li')[1];
+            items.insertBefore(node2,li2);
+
+        }
+      </script>
+</body>
+</html>

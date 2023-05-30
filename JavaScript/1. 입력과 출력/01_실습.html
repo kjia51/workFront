@@ -26,6 +26,9 @@
             height: 50px;
             text-align: center;
         }
+        /* table{
+            border: 1px solid black;
+        } */
     </style>
 </head>
 <body>
@@ -45,30 +48,31 @@
     <script>
         
         function changeColor(){
-            var div1= document.querySelector('#div1');
-            var selectColor = document.querySelector('#selectColor');
-            console.log('div1',div1);
-            console.log('selectColor', selectColor);
+            // var div1= document.querySelector('#div1');
+            // var selectColor = document.querySelector('#selectColor');
+            // console.log('div1',div1);
+            // console.log('selectColor', selectColor);
             // div.style : 엘리먼트(요소)의 inline CSS
             // div1.style.backgroundcolor
             // getComputedStyle(document.querySelector('#div1')).backgroundcolor
-            
             var color = selectColor.value;
             div1.style.background=color;
             var boxColor = getComputedStyle(div1).backgroundColor;
+            // style 속성값을 읽어오고 싶을 때 style 속성과 getComputedStyle() 두가지 사용 가능
             console.log(color);
             var r=parseInt(color.substr(1,2),16);
             var g=parseInt(color.substr(3,2),16);
             var b=parseInt(color.substr(5,2),16);
             // rgb타입으로 생성
-            var rgbColor = `rgb(${r},${g},${b})`;
+            var rgbColor = `rgb(${r}, ${g}, ${b})`;
             console.log(rgbColor);
             console.log(boxColor);
-            
             if(rgbColor==boxColor){
                 alert("같은 색상입니다")
             } else{
-                div1.style.backgroundcolor = color;
+                // div1.style.backgroundcolor = color;
+                boxColor=color;
+                
             }
             
             div1.style.width='200px';
@@ -164,25 +168,23 @@
     
 
     
+    <!-- // var table = '<table border="1">'; -->
     <script>
         function makeTable(){
-
             var rowcnt = prompt('행');
             var colcnt = prompt('열');
-
-            var table = '<table border="1">';
+            var table ='<table>';
             for(var i=0; i<rowcnt; i++){
                 table +='<tr>';
                     for(var j=0; j<colcnt; j++){
-                        table +=`<td>컬럼${j}`;
+                        table +=`<td>컬럼\n${i}-${j}`;
                         table +='</td>';
                     }
                     table +='</tr>';
             }
             table +='</tabel>';
             document.querySelector('#div3').innerHTML=table;
-        }
-        
+        }        
     </script>
 
 
