@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b4793f7e09cabda709895d2261a8c2af"></script>
+    <script src="5. AJAX-공공데이터활용_지도마커.js"></script>
+    <style>
+        *{
+            list-style: none;
+        }
+        form{
+            border: 1px solid black;
+            padding: 10px;
+            width: 50%;
+        }
+        .hidden{
+            display: none;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="map" style="width:60%;height:500px;"></div>
+    <h2>요청정보</h2>
+    <form id='campForm'>
+        <!-- <legend>요청 정보</legend> -->
+        serviceKey : <input type="text" name='serviceKey' id='' value='JWFQQ8%2Fl2mzSIciMFp6OsEWf0FY%2FjZtaVBpKpNb2ga1UmCMhSzskajf3HKN%2Beu3E959Qv6UYx6vq0jKX3tB0hA%3D%3D'> <br><br>
+        numOfRows : <input type="text" name='numOfRows' id='' value='100'><br><br>
+        pageNo : <input type="text" name='pageNo' id='' value='1'><br><br>
+        MobileOS : <input type="text" name='MobileOS' id='' value='ETC'><br><br>
+        MobileApp : <input type="text" name='MobileApp' id='' value='AppTest'><br><br>
+        mapX : <input type="text" name='mapX' id='mapX' value='128.6142847'><br><br>
+        mapY : <input type="text" name='mapY' id='mapY' value='36.0345423'><br><br>
+        radius : <input type="text" name='radius' id='' value='20000'><br><br>
+        <!-- _type : json형식으로 받아오기 위해 _type에 json값을 넣어줍니다 -->
+        _type : <input type="text" name='_type' id='' value='json'><br><br>
+        <button id='btn'>조회</button>
+    </form>
+    <div id='result'></div>
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>커스텀 오버레이 생성하기2</title>
+    <style>
+.overlaybox marker{position:relative;width:360px;height:350px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/box_movie.png') no-repeat;padding:15px 10px;}
+.overlaybox div, ul {overflow:hidden;margin:0;padding:0;}
+.overlaybox li {list-style: none;}
+.overlaybox .boxtitle {color:#fff;font-size:16px;font-weight:bold;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png') no-repeat right 120px center;margin-bottom:8px;}
+.overlaybox .first {position:relative;width:247px;height:136px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/thumb.png') no-repeat;margin-bottom:8px;}
+.first .text {color:#fff;font-weight:bold;}
+.first .triangle {position:absolute;width:48px;height:48px;top:0;left:0;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/triangle.png') no-repeat; padding:6px;font-size:18px;}
+.first .movietitle {position:absolute;width:100%;bottom:0;background:rgba(0,0,0,0.4);padding:7px 15px;font-size:14px;}
+.overlaybox ul {width:247px;}
+.overlaybox li {position:relative;margin-bottom:2px;background:#2b2d36;padding:5px 10px;color:#aaabaf;line-height: 1;}
+.overlaybox li span {display:inline-block;}
+.overlaybox li .number {font-size:16px;font-weight:bold;}
+.overlaybox li .title {font-size:13px;}
+.overlaybox ul .arrow {position:absolute;margin-top:8px;right:25px;width:5px;height:3px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/updown.png') no-repeat;} 
+.overlaybox li .up {background-position:0 -40px;}
+.overlaybox li .down {background-position:0 -60px;}
+.overlaybox li .count {position:absolute;margin-top:5px;right:15px;font-size:10px;}
+.overlaybox li:hover {color:#fff;background:#d24545;}
+.overlaybox li:hover .up {background-position:0 0px;}
+.overlaybox li:hover .down {background-position:0 -20px;}
+   
+</style>
+</head>
+<body>
+<div id="map" style="width:100%;height:350px;"></div>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b4793f7e09cabda709895d2261a8c2af"></script>
+<div id="map" style="width:60%;height:500px;"></div>
+<h2>요청정보</h2>
+<form id='campForm'>
+    <!-- <legend>요청 정보</legend> -->
+    serviceKey : <input type="text" name='serviceKey' id='' value='JWFQQ8%2Fl2mzSIciMFp6OsEWf0FY%2FjZtaVBpKpNb2ga1UmCMhSzskajf3HKN%2Beu3E959Qv6UYx6vq0jKX3tB0hA%3D%3D'> <br><br>
+    numOfRows : <input type="text" name='numOfRows' id='' value='100'><br><br>
+    pageNo : <input type="text" name='pageNo' id='' value='1'><br><br>
+    MobileOS : <input type="text" name='MobileOS' id='' value='ETC'><br><br>
+    MobileApp : <input type="text" name='MobileApp' id='' value='AppTest'><br><br>
+    mapX : <input type="text" name='mapX' id='mapX' value='128.6142847'><br><br>
+    mapY : <input type="text" name='mapY' id='mapY' value='36.0345423'><br><br>
+    radius : <input type="text" name='radius' id='' value='20000'><br><br>
+    <!-- _type : json형식으로 받아오기 위해 _type에 json값을 넣어줍니다 -->
+    _type : <input type="text" name='_type' id='' value='json'><br><br>
+    <button id='btn'>조회</button>
+</form>
+<div id='result'></div>
+
+<script>
+    var map;
+    window.onload = function(){
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+        mapOption = { 
+            center: new kakao.maps.LatLng(37.502, 127.026581), // 지도의 중심좌표
+            level: 4 // 지도의 확대 레벨
+        };
+        map = new kakao.maps.Map(mapContainer, mapOption); 
+    if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition((position) => {
+                doSomething(position.coords.latitude, position.coords.longitude);
+    });
+    } else {
+        alert('geolocation 지원 불가');
+    }
+    btn.addEventListener('click',function(e){
+        e.preventDefault();
+        let url = 'https://apis.data.go.kr/B551011/GoCamping/locationBasedList?';
+    let campForm = document.querySelector('#campForm');
+    let formData = new FormData(campForm);
+    let parms = '';
+    for(let pair of formData.entries()){
+        parms += `${pair[0]}=${pair[1]}&`;
+    }
+    url += parms;
+    console.log(url);
+    
+    fetch(url)
+
+    .then(res=>res.json()) 
+    .then((json)=>{ 
+        console.log('json',json);
+
+        if(json.response.body.item == ''){
+            alert('주변에 캠핌장이 없습니다 반경을 확대해보세요');
+            return;
+        }
+        printCampInfo(json.response.body.items.item);
+    })
+    .catch((err)=> console.log(err));
+    });
+    
+    }
+    function doSomething(latitude, longitude){
+    
+    mapX.value = longitude;
+    mapY.value = latitude;
+
+    var locPosition = new kakao.maps.LatLng(latitude, longitude);   
+
+    map.setCenter(locPosition);
+
+    var marker = new kakao.maps.Marker({  
+        map: map, 
+        position: locPosition
+    }); 
+    }
+    function printCampInfo(itemArr){
+        let resDiv = document.querySelector('#result');
+        resDiv.innerHTML = ''
+        resDiv.innerHTML += '<ul>'
+            for(item of itemArr){
+            resDiv.innerHTML +=`
+            <li>
+                <h1>${item.facltNm}</h1>
+                <img src="${item.firstImageUrl}" alt="캠핑장 이미지" width=400px height=300px>
+                <p>${item.intro}</p>
+                <p>${item.mapX}, ${item.mapY}</p>
+            </li>
+                `;
+                var marker = new kakao.maps.Marker({
+                    map: map, 
+                    title : item.facltNm, 
+                    position : new kakao.maps.LatLng(item.mapY, item.mapX)
+            });
+            var customOverlay = new kakao.maps.CustomOverlay({
+                position: position,
+                content: marker,
+                xAnchor: 0.3,
+                yAnchor: 0.91
+            });
+
+            // 커스텀 오버레이를 지도에 표시합니다
+            customOverlay.setMap(map);
+                        
+                }
+    resDiv.innerHTML +='</ul>'
+    }
+// 커스텀 오버레이에 표시할 내용입니다     
+// HTML 문자열 또는 Dom Element 입니다 
+var content = '<div class="overlaybox">' +
+    '    <div class="boxtitle">금주 영화순위</div>' +
+    '    <div class="first">' +
+    '        <div class="triangle text">1</div>' +
+    '        <div class="movietitle text">드래곤 길들이기2</div>' +
+    '    </div>' +
+    '    <ul>' +
+    '        <li class="up">' +
+    '            <span class="number">2</span>' +
+    '            <span class="title">명량</span>' +
+    '            <span class="arrow up"></span>' +
+    '            <span class="count">2</span>' +
+    '        </li>' +
+    '        <li>' +
+    '            <span class="number">3</span>' +
+    '            <span class="title">해적(바다로 간 산적)</span>' +
+    '            <span class="arrow up"></span>' +
+    '            <span class="count">6</span>' +
+    '        </li>' +
+    '        <li>' +
+    '            <span class="number">4</span>' +
+    '            <span class="title">해무</span>' +
+    '            <span class="arrow up"></span>' +
+    '            <span class="count">3</span>' +
+    '        </li>' +
+    '        <li>' +
+    '            <span class="number">5</span>' +
+    '            <span class="title">안녕, 헤이즐</span>' +
+    '            <span class="arrow down"></span>' +
+    '            <span class="count">1</span>' +
+    '        </li>' +
+    '    </ul>' +
+    '</div>';
+
+
+</script>
+</body>
+</html>

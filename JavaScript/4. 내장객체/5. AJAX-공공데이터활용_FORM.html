@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            list-style: none;
+        }
+        form{
+            border: 1px solid black;
+            padding: 10px;
+            width: 50%;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+    <h2>요청정보</h2>
+    <form id='campForm'>
+        <!-- <legend>요청 정보</legend> -->
+        serviceKey : <input type="text" name='serviceKey' id='' value='JWFQQ8%2Fl2mzSIciMFp6OsEWf0FY%2FjZtaVBpKpNb2ga1UmCMhSzskajf3HKN%2Beu3E959Qv6UYx6vq0jKX3tB0hA%3D%3D'> 
+        <br><br>
+        numOfRows : <input type="text" name='numOfRows' id='' value='100'>
+        <br><br>
+        pageNo : <input type="text" name='pageNo' id='' value='1'>
+        <br><br>
+        MobileOS : <input type="text" name='MobileOS' id='' value='ETC'>
+        <br><br>
+        MobileApp : <input type="text" name='MobileApp' id='' value='AppTest'>
+        <br><br>
+        mapX : <input type="text" name='mapX' id='mapX' value='128.6142847'>
+        <br><br>
+        mapY : <input type="text" name='mapY' id='mapY' value='36.0345423'>
+        <br><br>
+        radius : <input type="text" name='radius' id='' value='20000'>
+        <br><br>
+        <!-- _type : json형식으로 받아오기 위해 _type에 json값을 넣어줍니다 -->
+        _type : <input type="text" name='_type' id='' value='json'>
+        <br><br>
+        <button id='btn'>조회</button>
+    </form>
+    <div id='result'></div>
+    <div id="map" style="width:100%;height:1000px;"></div>
+    <script>
+        window.onload = function(){
+            btn.addEventListener('click',function(e){
+                e.preventDefault();
+                // 현재 나의 위치를 확인하고 mapX, mapY값 변경
+                if ("geolocation" in navigator) {
+                    navigator.geolocation.getCurrentPosition((position) => {
+                    mapX.value = position.coords.longitude;
+                    mapY.value = position.coords.latitude;
+                    
+                });
+                } else {
+                    alert('geolocation 지원 불가');
+                }
+
+                let url = 'https://apis.data.go.kr/B551011/GoCamping/locationBasedList?';
+                let campForm = document.querySelector('#campForm');
+                let formData = new FormData(campForm);
+                let parms = '';
+                for(let pair of formData.entries()){
+                    console.log(pair[0]);
+                    console.log(pair[1]);
+                    parms += `${pair[0]}=${pair[1]}&`;
+                }
+                url += parms;
+                console.log(url);
+                
+                // ES6에서 url 요청 결과를 받아옵니다
+                fetch(url)
+                // 요청결과가 성공이라면
+
+                // 화살표함수에서 한줄인 경우 return 문과 {}가 생략 가능
+                .then(res=>res.json()) // 받아온 결과값 -> json 객체로 변환
+                .then((json)=>{ //json 객체로부터 꺼내와야함
+                    // console.log('json',json);
+                    let itemArr = json.response.body.items.item;
+                    let resDiv = document.querySelector('#result');
+                    resDiv.innerHTML = ''
+                    resDiv.innerHTML += '<ul>'
+                        for(item of itemArr){
+                        resDiv.innerHTML +=`
+                        <li>
+                            <h1>${item.facltNm}</h1>
+                            <img src="${item.firstImageUrl}" alt="캠핑장 이미지" width=400px height=300px>
+                            <p>${item.intro}</p>
+                        </li>
+                            `;
+                    }
+                    resDiv.innerHTML +='</ul>'
+                })
+                .catch((err)=> console.log(err));
+            });
+        }
+              function doSomething(latitude, longitude){
+                result.innerHTML = `latitude : ${latitude} <br>`;
+                result.innerHTML += `longitude : ${longitude}`;
+                mapX.value = position.coords.longitude;
+                mapY.value = position.coords.latitude;
+              }
+    </script>
+</body>
+</html>
