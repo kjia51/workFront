@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            list-style: none;
+            /* margin: 0px auto; */
+        }
+
+        .hidden{
+            display: none;
+        }
+        td{
+            /* border: 1px solid black; */
+            display: inline;
+        }
+        th{
+            /* border: 1px solid black; */
+            display: inline;
+        }
+
+        fieldset{
+            display: inline; 
+            position: relative;
+        }
+        h2{
+            text-align: center;
+        }
+
+        table, th {
+            border: 1px solid #bcbcbc;
+        }
+        .active{
+            display: none;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h2>회원가입폼</h2>
+    <button id='register'>회원가입</button>
+    <form>
+        <table id='tb1'>
+            <tr>
+                <th width='50px'>ID</th>
+                <td><input type="text"></td>
+                <td><input type="button" value="중복확인"></td>
+            </tr> 
+            <tr>
+                <th>비밀번호</th>
+                <td><input type="password" size='30'></td>
+            </tr>
+            <tr>
+                <th>성명</th>
+                <td><input type="username" size='30'></td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td><input type="emailid" size='30'>@</td>
+                <td><input type="address" size='30'></td>
+                <td>
+                <select name='emailAddr' id='emailAddr'>
+                    <optgroup>
+                        <option value="etc" label='직접입력'>직접입력</option>
+                        <option value="naver.com">네이버</option>
+                        <option value="goolge.com">구글</option>
+                    </optgroup>
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <th>핸드폰</th>
+                <td>
+                    <select name='phone' id='phone'>
+                        <optgroup>
+                            <option value="etc" label='번호선택'>번호선택</option>
+                            <option value="010">010</option>
+                            <option value="070">070</option>
+                        </optgroup>
+                    </select>
+                </td>
+                <td><input type="phone" size='30'>-</td>
+                <td><input type="phone" size='30'></td>
+            </tr>
+            <tr>
+                <th>성별</th>
+                <td>
+                    <fieldset>
+                        <input type="radio" name='gender' value='M' checked>남자
+                        <input type="radio" name='gender' value='F'>여자
+                    </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <th>취미</th>
+                <td>
+                <fieldset>
+                    <input type="checkbox" name ='hobby' value='공부'> 공부
+                    <input type="checkbox" name ='hobby' value='등산'> 등산
+                    <input type="checkbox" name ='hobby' value='게임'> 게임
+                    <input type="checkbox" name ='hobby' value='낚시'> 낚시
+                    <input type="checkbox" name ='hobby' value='쇼핑'> 쇼핑
+                </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <th>자기소개</th>
+                <td>
+                <textarea type="motive" cols='60' rows='6'>자기소개를 100자 이내로 입력하세요</textarea> 
+                </td>
+            </tr>
+            <tr>
+                <td><button id='submit'>회원가입</button></td>
+                <td><button id='reset'>취소</button></td>
+            </tr>
+
+        </table>
+    </form>
+    <script>
+        window.onload = function(){
+            register.addEventListener('click',function(){
+                let tb1 = document.querySelector('#tb1');
+                tb1.classList.add('active');
+                tb1.classList.toggle('active');
+
+         })
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #timer{
+            border: 5px solid black;
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+
+    <div id='timer'></div>
+    <script>
+
+            function clock(){
+                let date = new Date();
+                let hour = date.getHours();
+                let minutes = date.getMinutes();
+                let seconds = date.getSeconds();
+    
+                document.querySelector('#timer').innerHTML=`${hour}:${minutes}:${seconds}`;
+
+            };
+
+        setInterval(clock, 1000);
+    </script>
+</body>
+</html>

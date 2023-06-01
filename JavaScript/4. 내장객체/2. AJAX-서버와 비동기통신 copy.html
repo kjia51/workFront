@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문항2</title>
+</head>
+<body>
+  <button id='btn'>실행</button>
+  </div>
+  <script>
+    window.onload = function(){
+      let xhr = new XMLHttpRequest();
+      function testJson(){
+        let jsonStr =`
+        [{"name" : "고경희",
+          "major" : "컴퓨터공학",
+          "grade" : 2,
+          "phone" : "010-1111-2222"
+          },
+  
+          {"name" : "홍길동",
+          "major" : "컴퓨터공학",
+          "grade" : 2,
+          "phone" : "010-2222-3333"}]`
+          
+          let jsObj = JSON.parse(jsonStr);
+          for(obj of jsObj){
+            let a = `${obj.name}는 ${obj.major} 전공이고 ${obj.grade} 학점이다`;
+            console.log(`jsobj : ${a}`);
+            console.log(`obj : ${JSON.stringify(a)}`);
+          }
+
+      }
+      btn.addEventListener('click',function(){
+        testJson();
+      })
+    }
+ 
+  </script>
+</body>
+</html>
